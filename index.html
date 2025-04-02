@@ -1,242 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar section-content">
-            <a href="#home" class="nav-logo">
-                <h2 class="coffee-text">☕ Coffee</h2>
-            </a>
-           <ul class="menu">
-            <button id="menu-close-button" class="fas fa-times"></button> 
-            <li class="nav-item">
-                <a href="#home" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="#about" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="#menu" class="nav-link">Menu</a>
-            </li>
-            <li class="nav-item">
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-            </li>
-            <li class="nav-item">
-                <a href="#gallery" class="nav-link">Gallery</a>
-            </li>
-            <li class="nav-item">
-                <a href="#contact-us" class="nav-link">Contact us</a>
-            </li>
-          </ul>
-          <button id="menu-open-button" class="fas fa-bars"></button> 
-        </nav>
-    </header>
-    <main>
-        <section class="hero-section" id="home" >
-            <div class="section-content">
-                <div class="hero-detail">
-                    <h2 class="title">Best Coffee</h2>
-                    <h3 class="sub-title">Make your day great with our special coffee!</h3>
-                    <p class="description">Welcome to our coffee paradise where every bean tells a story and every cp sparks joy. </p>
-                    <div class="button">
-                        <a href="#" class="order-now">Order Now</a>
-                        <a href="#" class="contact-us">Contact Us</a>
-                    </div>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
                 </div>
-                <div class="coffee-image">
-                    <img src="/coffee.png" alt="hero" class="coffee-cup">
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <div class="image">
+                <img src="music.png" alt="photo" class="music-image">
+                <h1 class="text">Despacito</h1>
+                <p class="para">Luis Fonsi Ft. Puerto Rican</p>
+            </div>
+            <div class="audio">
+                <audio id="song">
+                    <source src="anegan.mp3" type="audio/mpeg">
+                </audio>
+                <div>
+                    <input type="range" value="0" id="progress">
+                    <p class="start">00:00</p>
+                    <p class="end">04:00</p>
                 </div>
             </div>
-        </section>
-        <section class="about-section" id="about">
-            <div class="section-content">
-                <div class="about-image">
-                    <img src="About us.jpg" alt="aboutimg" class="AboutImg">
-                </div>
-                <div class="About-content">
-                    <h2 class="section-title">ABOUT US</h2>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aut, itaque pariatur animi nulla iusto unde ipsa, voluptas fugit, sint mollitia illum ab minima debitis! Reprehenderit sapiente consequuntur doloribus a, molestias porro sunt atque quas sequi suscipit dolorem aliquam quos eum ut libero sit. Ab quidem aliquid enim corrupti nobis!</p>
-                    <div class="social-link-list">
-                        <a href="#" class="social-link" ><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" class="social-link" ><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-link" ><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
+            <div class="controls">
+                <div class="icons" onclick="prevSong()"><i class="fa-solid fa-backward"></i></div>
+                <div class="icons" onclick="playPause()"><i class="fa-solid fa-play" id="ctrlicon"></i></div>
+                <div class="icons" onclick="nextSong()"><i class="fa-solid fa-forward"></i></div>
             </div>
-        </section>
-        <section class="menu-section" id="menu">
-            <h2 class="section-title">Our Menu</h2>
-            <div class="section-content">
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <img src="coffee1.jpg" alt="Hot-coffee" class="menu-image">
-                        <div class="menu-detail">
-                            <h3 class="name">Heart Coffee</h3>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, qui consectetur!</p>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="coffee2.jpg" alt="cold-coffee" class="menu-image">
-                        <div class="menu-detail">
-                            <h3 class="name">Cold Coffee</h3>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, qui consectetur!</p>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="burger.png" alt="Burger" class="menu-image">
-                        <div class="menu-detail">
-                            <h3 class="name">Butter Burger</h3>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, qui consectetur!</p>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="juice.jpg" alt="Juice" class="menu-image">
-                        <div class="menu-detail">
-                            <h3 class="name">Fresh Juice</h3>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, qui consectetur!</p>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="pizza.jpg" alt="Pizza" class="menu-image">
-                        <div class="menu-detail">
-                            <h3 class="name">Pizza</h3>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, qui consectetur!</p>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <img src="icecream.jpg" alt="Icecream" class="menu-image">
-                        <div class="menu-detail">
-                            <h3 class="name">Icecream</h3>
-                            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, qui consectetur!</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="testimonial-section" id="testimonials">
-            <h2 class="section-title">TESTIMONIALS</h2>
-            <div class="slider-container swiper">
-                <div class="slider-wrapper">
-                    <ul class="testimonial-list swiper-wrapper">
-                        <li class="testimonial swiper-slide">
-`                           <img src="suriya.jpg" alt="js" class="user-image">
-                            <h3 class="name">JAYASURIYA</h3>
-                            <i class="text">Web developer,Hockey player,farmer,good boy,Koovadu</i>
-                        </li>
-                         <li class="testimonial swiper-slide">
-`                           <img src="tamil.jpeg" alt="kavingar" class="user-image">
-                            <h3 class="name">TAMILSELVAN</h3>
-                            <i class="text">Web developer,Hockey player,poetry,good boy,Kombai</i>
-                        </li>
-                         <li class="testimonial swiper-slide">
-`                           <img src="lilith.jpeg" alt="RAP SINGER" class="user-image">
-                            <h3 class="name">LILITH</h3>
-                            <i class="text">Hockey player,Rap singer,C++ programer,good boy,Boothanatham</i>
-                        </li>
-                         <li class="testimonial swiper-slide">
-`                           <img src="karthi.jpg" alt="Motivater" class="user-image">
-                            <h3 class="name">KARTHIKEYAN</h3>
-                            <i class="text">Frontend Engineer,Js programer,good boy,thiruvallur</i>
-                        </li>
-                         <li class="testimonial swiper-slide">
-`                           <img src="adavar.jpeg" alt="suruli" class="user-image">
-                            <h3 class="name">SURULIADAVAR</h3>
-                            <i class="text">Indian navy,NCC commander,good boy, Kombai</i>
-                        </li>
-                    </ul>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-slide-button swiper-button-prev"></div>
-                    <div class="swiper-slide-button swiper-button-next"></div>
-                  
-                </div>
-            </div>
-        </section>
-        <section class="gallery-section" id="gallery">
-            <h2 class="section-title">GALLERY</h2>
-            <div class="section-content">
-                <ul class="gallery-list">
-                    <li class="gallery-item">
-                        <img src="veg1.jpg" alt="veg-item" class="gallery-image">
-                    </li>
-                    <li class="gallery-item">
-                        <img src="veg1.jpg" alt="veg-item" class="gallery-image">
-                    </li>
-                    <li class="gallery-item">
-                        <img src="veg1.jpg" alt="veg-item" class="gallery-image">
-                    </li>
-                    <li class="gallery-item">
-                        <img src="veg1.jpg" alt="veg-item" class="gallery-image">
-                    </li>
-                    <li class="gallery-item">
-                        <img src="veg1.jpg" alt="veg-item" class="gallery-image">
-                    </li>
-                    <li class="gallery-item">
-                        <img src="veg1.jpg" alt="veg-item" class="gallery-image">
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="contact-section" id="contact-us">
-            <h2 class="section-title">CONTACT US</h2>
-            <div class="section-content">
-                <ul class="contact-info-list">
-                    <li class="contact-info">
-                        <i class="fa-solid fa-location-crosshairs"></i>
-                        <p>1/79,North street,Koovadu,Kallakurichi</p>
-                    </li>
-                    <li class="contact-info">
-                        <i class="fa-regular fa-envelope"></i>
-                        <p>jayasuriyavj798@gmail.com</p>
-                    </li>
-                    <li class="contact-info">
-                        <i class="fa-solid fa-phone"></i>
-                        <p>(+91)7094983145</p>
-                    </li>
-                    <li class="contact-info">
-                        <i class="fa-regular fa-clock"></i>
-                        <p>Monday-Friday:(9:00 to 5:00)</p>
-                    </li>
-                    <li class="contact-info">
-                        <i class="fa-regular fa-clock"></i>
-                        <p>Sunday:colsed</p>
-                    </li>
-                    <li class="contact-info">
-                        <i class="fa-solid fa-globe"></i>
-                        <p>www.google.com</p>
-                    </li>
-                </ul>
-                <form action="#" class="contact-form">
-                    <input type="text" placeholder="Enter your name" class="form-input" required>
-                    <input type="email" placeholder="Enter your E-mail" class="form-input" required>
-                    <textarea placeholder="Enter your message" class="form-input" required></textarea>
-                    <button class="submit-button">Submit</button>
-                </form>
-            </div>
-        </section>
-        <footer class="footer-section">
-            <div class="section-content">
-                <p class="copy-right-text">@ 2024 Coffee Shop</p>
-                <div class="social-link-list">
-                    <a href="#" class="social-link" ><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="social-link" ><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-link" ><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-                <p class="policy-text">
-                    <a href="#" class="policy-link">Privacy policy</a>
-                    <span class="separator">•</span>
-                    <a href="#" class="policy-link">Refund policy</a>
-                </p>
-            </div>
-        </footer>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        </div>
+    </div>
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/dfe4a7b9ba.js" crossorigin="anonymous"></script>
 </body>
 </html>
